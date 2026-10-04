@@ -14,6 +14,10 @@
 /* 상단 제목 영역을 파란색으로 강조하고 글자는 흰색으로 표시합니다. */
 header{background:var(--blue);color:#fff;padding:28px 30px;border-radius:16px}
 header .eyebrow,header p{color:#fff}
+/* 제목 옆 기준 시점은 오늘 날짜가 아닌 고정 문구로 표시합니다. */
+.title-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:8px 0}
+.title-row h1{margin:0}
+.reference-date{font-size:13px;font-weight:400;letter-spacing:0;color:#fff;white-space:nowrap}
 header .badge{color:#fff;background:transparent;border-color:rgba(255,255,255,.5)}
 /* 가격 열은 천 단위 구분 기호와 우측 정렬을 사용합니다. */
 td.price-cell{ text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums }
@@ -21,7 +25,7 @@ td.price-cell{ text-align:right;white-space:nowrap;font-variant-numeric:tabular-
 </style>
 </head>
 <body><main>
-<header><div class="eyebrow">BOOK DATA / OVERVIEW</div><h1>도서 데이터 대시보드</h1><p>가격 분포부터 출판사 구성까지, 50권의 도서를 한눈에 살펴보세요.</p><span class="badge">제공된 CSV 기준 · 50개 도서 항목</span></header>
+<header><div class="eyebrow">BOOK DATA / OVERVIEW</div><div class="title-row"><h1>도서 데이터 대시보드</h1><span class="reference-date">2026년 10월 기준</span></div><p>가격 분포부터 출판사 구성까지, 50권의 도서를 한눈에 살펴보세요.</p><span class="badge">제공된 CSV 기준 · 50개 도서 항목</span></header>
 <!-- 요약과 차트는 전체 데이터 기준이며, 검색은 표에만 적용합니다. -->
 <section class="kpis" aria-label="전체 도서 요약">
 <div class="card"><div class="kpi-label">전체 도서 수</div><div class="kpi-value"><span id="total"></span><small>권</small></div><div class="kpi-note">세트도 하나의 도서 항목으로 집계</div></div>
